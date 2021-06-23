@@ -1,0 +1,13 @@
+{
+  "$": {
+    "join": {
+      "long": "="
+    }
+  },
+  "_": [
+    "src/**/*.js"
+  ],
+  "target": "es2020",
+  "outdir": "dist/",
+  "bundle": true
+}
