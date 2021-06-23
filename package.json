@@ -4,17 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cd test ; esbuild $(node_modules/.bin/aaargh example.config.json)"
+    "test": "cd test ; esbuild $(node_modules/.bin/aaargh example.config.json)",
+    "postpublish": "PACKAGE_VERSION=$(cat package.json | grep \\\"version\\\" | head -1 | awk -F: '{print $2}' | sed 's/[\",]//g' | tr -d '[[:space:]]') && npm deprecate \"aaargh@<${PACKAGE_VERSION}\" \"Rolling release, please update to ${PACKAGE_VERSION}\""
   },
   "bin": {
     "aaargh": "index.js"
   },
+  "homepage": "https://github.com/finwo/aaargh",
   "repository": {
     "type": "git",
-    "url": "/home/finwo/git/finwo/aaargh"
+    "url": "git://github.com/finwo/aaargh"
   },
   "keywords": [],
-  "author": "Robin Bron <finwo@pm.me>",
+  "author": {
+    "name": "Robin Bron",
+    "email": "finwo@pm.me"
+  },
   "license": "MIT",
   "funding": {
     "url": "https://github.com/sponsors/finwo"
