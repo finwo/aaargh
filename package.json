@@ -10,6 +10,11 @@
   "bin": {
     "aaargh": "index.js"
   },
+  "files": [
+    "/src",
+    "/README.md",
+    "/LICENSE.md"
+  ],
   "homepage": "https://github.com/finwo/aaargh",
   "repository": {
     "type": "git",
