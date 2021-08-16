@@ -54,6 +54,7 @@ if (cfg['$']) {
 
 // Escape helper function
 function shell_escape(str) {
+  if (!str) return '';
   return str
     .split('\\').join('\\\\')
     .split(' ').join('\\ ')
@@ -119,18 +120,14 @@ async function parseArgument(key, value) {
     }
   }
 
-  process.stderr.write(
-    args
-      .map(arg => shell_escape(arg))
-      .join(' ')
-  );
+  const output = args
+    .filter(arg => arg)
+    .map(shell_escape)
+    .join(' ');
+
+  process.stderr.write(output);
   process.stderr.write('\n');
 
-  process.stdout.write(
-    args
-      .map(arg => shell_escape(arg))
-      .join(' ')
-  );
+  process.stdout.write(output);
   process.stdout.write('\n');
-
 })();
