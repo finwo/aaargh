@@ -35,6 +35,6 @@
     "minimist": "^1.2.5"
   },
   "devDependencies": {
-    "esbuild": "^0.12.9"
+    "esbuild": "^0.25.0"
   }
 }
